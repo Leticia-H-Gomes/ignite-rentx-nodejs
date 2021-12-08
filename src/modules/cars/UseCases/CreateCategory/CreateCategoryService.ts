@@ -1,13 +1,17 @@
-import { CategoriesRepository } from "../../repositories/implementations/CategoriesRepository";
+import { inject,injectable } from "tsyringe";
+import { ICategoriesRepository } from "../../repositories/ICategoriesRepository";
+
 
 interface IRequest{
   name:string;
   description:string;
 }
-
+@injectable()
 class CreateCategoryService {
 
-  constructor(private categoryRepository:CategoriesRepository){
+  constructor(
+    @inject("CategoriesRepository")
+    private categoryRepository:ICategoriesRepository){
 
   }
 

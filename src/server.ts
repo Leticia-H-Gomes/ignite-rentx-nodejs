@@ -1,6 +1,7 @@
 import express from 'express';
 import { routes } from './routes';
 import "./database";
+import "./shared/container";
 
 
 const app = express();
